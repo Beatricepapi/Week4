@@ -7,5 +7,28 @@ public class StudentApp {
     public static void main(String[] args) {
         // Holds all Student objects
         ArrayList<Student> students = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("How many students do you want to enter?");
+        int count = sc.nextInt();
+        sc.nextLine(); // consume leftover newline
+
+        int i = 0;
+        while (i < count) {
+            System.out.println("\nEnter details for student " + (i+1) + ":");
+
+            System.out.println("Enter name: ");
+            String name = sc.nextLine();
+
+            System.out.println("Enter email: ");
+            String email = sc.nextLine();
+
+            System.out.println("Enter course: ");
+            String course = sc.nextLine();
+
+            students.add(new Student(name, email, course));
+            i++;
+        }
+        sc.close();
     }
 }
