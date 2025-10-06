@@ -11,7 +11,7 @@ public class StudentApp {
 
         System.out.println("How many students do you want to enter?");
         int count = sc.nextInt();
-        sc.nextLine(); // consume leftover newline
+        sc.nextLine(); // Consume leftover newline
 
         int i = 0;
         while (i < count) {
@@ -29,6 +29,11 @@ public class StudentApp {
             students.add(new Student(name, email, course));
             i++;
         }
+        System.out.println("\nStudent list:");
+        for (Student s : students) {
+            System.out.println(s); // uses Student.toString()
+        }
+
         sc.close();
     }
 }
